@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(15, 19, 26);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+    color: white;
+}
+
+li span {
+    border-bottom: 2px solid rgb(21, 55, 107);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
