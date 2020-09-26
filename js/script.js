@@ -1,4 +1,4 @@
-const books = [
+let books = [
     {
         isbn: "1600506460320",
         title: "Great book",
@@ -17,24 +17,44 @@ const books = [
     },
 ];
 
+
+
 const listContainer = document.querySelector("#book-list");
+
+createList();
 
 function createList() {
     listContainer.innerHTML = "";
 
     books.forEach(function (book) {
 
-        console.log(book);
+        let bookTitle = book.title;
         listContainer.innerHTML += `
                             <li>
-                                <span>${book.title}</span>
-                                <button class="del-book-btn"><i class="fas fa-trash-alt"></i></button>
+                                <span>${bookTitle}</span>
+                                <button class="del-book-btn"><i class="fas fa-trash-alt" data-title="${bookTitle}"></i></button>
                             </li>`
-        const button = document.querySelector(".del-book-btn");
-        console.log(button);
 
+        const button = document.querySelector(".del-book-btn");
+
+        button.addEventListener("click", removeBook);
     })
 }
 
+function removeBook() {
+    const deleteThisBook = event.target.dataset.title;
 
-createList();
+    let newBooks = books.filter(function (book) {
+        if (deleteThisBook !== book.title) {
+            return true;
+        }
+    })
+
+    console.log(newBooks);
+
+    books = newBooks;
+
+    createList();
+}
+
+
