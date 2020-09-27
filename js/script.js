@@ -1,23 +1,7 @@
-import { listContainer } from "./constants/constants.js";
+import { listContainer, input } from "./constants/constants.js";
 
-let books = [
-    {
-        isbn: "1600506460320",
-        title: "Great book",
-    },
-    {
-        isbn: "1600506460373",
-        title: "Ok book",
-    },
-    {
-        isbn: "1600506460521",
-        title: "Bad book",
-    },
-    {
-        isbn: "1600506460456",
-        title: "Terrible book",
-    },
-];
+let books = [];
+
 
 
 function createList() {
@@ -42,9 +26,26 @@ function createList() {
     })
 
     if (books.length === 0) {
-        listContainer.innerHTML += '<div class="error-message">Whoops, no more books!</div>';
+        listContainer.innerHTML += '<div class="error-message">Whoops, no books are in the list!</div>';
     }
 }
+
+button.addEventListener("click", addItem);
+
+function addItem() {
+    const itemValue = input.value.trim();
+    console.log(itemValue);
+
+    if (itemValue.length >= 1) {
+        const newItem = { title: itemValue };
+        //  console.log(input.value); 
+        books.push(newItem);
+        // console.log(todos); 
+
+        createList(books);
+    }
+}
+
 
 function removeBook() {
     const deleteThisBook = event.target.dataset.title;

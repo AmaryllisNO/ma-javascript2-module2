@@ -5,11 +5,12 @@ body {
 
 li {
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
+    padding: 0;
 }
 
 li i {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 li span {
@@ -17,6 +18,7 @@ li span {
 }
 
 ul {
+    padding: 0;
     padding-top: 3em;
     list-style: none;
     margin: 0 auto;
@@ -24,6 +26,7 @@ ul {
 }
 
 .container {
+    padding: 3em;
     max-width: 900px;
     margin: 0 auto;
 }
