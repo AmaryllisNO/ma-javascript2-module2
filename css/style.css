@@ -1,6 +1,7 @@
 body {
     background-color: rgb(15, 19, 26);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 
 li {
@@ -26,7 +27,6 @@ ul {
 }
 
 .container {
-    padding: 3em;
     max-width: 900px;
     margin: 0 auto;
 }
