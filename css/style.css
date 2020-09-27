@@ -5,6 +5,11 @@ body {
 
 li {
     color: white;
+    font-size: 2em;
+}
+
+li i {
+    font-size: 2em;
 }
 
 li span {
@@ -12,7 +17,15 @@ li span {
 }
 
 ul {
+    padding-top: 3em;
     list-style: none;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 button {
@@ -20,4 +33,8 @@ button {
     border: none;
     color: white;
     cursor: pointer;
+}
+
+.error-message {
+    color: rgb(252, 55, 88);
 }

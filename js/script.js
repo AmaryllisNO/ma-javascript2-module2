@@ -1,3 +1,5 @@
+import { listContainer } from "./constants/constants.js";
+
 let books = [
     {
         isbn: "1600506460320",
@@ -18,13 +20,9 @@ let books = [
 ];
 
 
-
-const listContainer = document.querySelector("#book-list");
-
-createList();
-
 function createList() {
     listContainer.innerHTML = "";
+
 
     books.forEach(function (book) {
 
@@ -35,10 +33,17 @@ function createList() {
                                 <button class="del-book-btn"><i class="fas fa-trash-alt" data-title="${bookTitle}"></i></button>
                             </li>`
 
-        const button = document.querySelector(".del-book-btn");
+    })
 
+    const button = document.querySelectorAll(".del-book-btn");
+
+    button.forEach((button) => {
         button.addEventListener("click", removeBook);
     })
+
+    if (books.length === 0) {
+        listContainer.innerHTML += '<div class="error-message">Whoops, no more books!</div>';
+    }
 }
 
 function removeBook() {
@@ -57,4 +62,5 @@ function removeBook() {
     createList();
 }
 
+createList();
 
