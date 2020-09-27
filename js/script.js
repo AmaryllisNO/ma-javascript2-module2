@@ -26,13 +26,18 @@ export function removeBook() {
         if (deleteThisBook !== book.title) {
             return true;
         }
-    })
 
-    console.log(newBooks);
+        removeFromStorage(books);
+    })
 
     books = newBooks;
 
     createList();
+
+}
+
+function removeFromStorage(valueToRemove) {
+    localStorage.removeItem(listKey, JSON.stringify(valueToRemove))
 }
 
 function saveToStorage(valuteToSave) {
